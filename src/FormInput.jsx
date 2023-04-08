@@ -4,6 +4,7 @@ function FormInput(props) {
   const [formData, setFormData] = useState({
     name: "",
     message: "",
+    time: "",
   });
 
   const handleSubmit = (event) => {
@@ -13,12 +14,17 @@ function FormInput(props) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ from: formData.name, text: formData.message }),
+      body: JSON.stringify({
+        from: formData.name,
+        text: formData.message,
+        timeSent: formData.time,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
         props.fetchAllMessages();
+        props.refreshingList(true);
       })
       .catch((error) => {
         console.error("Error:", error);
