@@ -9,7 +9,7 @@ function FormInput(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3001/messages", {
+    fetch("https://chat-server-u011.onrender.com/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

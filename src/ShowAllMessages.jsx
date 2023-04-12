@@ -5,7 +5,7 @@ import { faPenNib } from "@fortawesome/free-solid-svg-icons";
 
 function ShowAllMessages(props) {
   function handleUpdate() {
-    alert("Feature coming soon");
+    alert("FEATURE COMING SOON WITH NEXT UPDATE");
   }
   return (
     <div>

@@ -20,7 +20,7 @@ function App() {
 
   // FETCH FUNCTION FOR ALL MESSAGES
   function fetchAllMessages() {
-    fetch("http://localhost:3001/messages")
+    fetch("https://chat-server-u011.onrender.com/messages")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -31,7 +31,7 @@ function App() {
 
   // FETCH FUNCTION FOR LATEST MESSAGES
   function fetchLatestMessages() {
-    fetch("http://localhost:3001/messages/latest")
+    fetch("https://chat-server-u011.onrender.com/messages/latest")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
@@ -43,7 +43,7 @@ function App() {
 
   // FETCH FUNCTION FOR DELETING MESSAGES
   function deleteMessage(id) {
-    fetch(`http://localhost:3001/messages/${id}`, {
+    fetch(`https://chat-server-u011.onrender.com/messages/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
