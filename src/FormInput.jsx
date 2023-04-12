@@ -38,7 +38,7 @@ function FormInput(props) {
 
   return (
     <form action="/messages" method="post" onSubmit={handleSubmit}>
-      <div>
+      <div className="name-container">
         <label htmlFor="name">Please enter your name</label>
         <input
           type="text"
@@ -48,7 +48,7 @@ function FormInput(props) {
           onChange={handleInputChange}
         />
       </div>
-      <div>
+      <div className="message-container">
         <label htmlFor="message">Please enter your message</label>
         <input
           type="text"

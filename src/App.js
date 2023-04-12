@@ -41,11 +41,30 @@ function App() {
       .catch((error) => console.log(error));
   }
 
+  // FETCH FUNCTION FOR DELETING MESSAGES
+  function deleteMessage(id) {
+    fetch(`http://localhost:3001/messages/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Something went wrong");
+        }
+        console.log("Message Deleted " + id);
+        refreshingList(true);
+      })
+      .catch((error) => console.log(error));
+  }
+
   useEffect(() => {
     fetchAllMessages();
     if (refresh) {
       fetchLatestMessages();
     }
+    // deleteMessage();
   }, [refresh, setRefresh]);
 
   return (
@@ -55,11 +74,17 @@ function App() {
         fetchAllMessages={fetchAllMessages}
         refreshingList={refreshingList}
       />
-      <button onClick={() => setShowMessages(true)}>Show all messages</button>
+      <button onClick={() => setShowMessages(true)} className="show-btn">
+        Show all messages
+      </button>
       {showMessages && (
-        <ShowAllMessages messages={messages} refreshingList={refreshingList} />
+        <ShowAllMessages
+          messages={messages}
+          refreshingList={refreshingList}
+          deleteMessage={deleteMessage}
+        />
       )}
-      <button onClick={() => setShowLatestMessages(true)}>
+      <button onClick={() => setShowLatestMessages(true)} className="show-btn">
         Show latest messages
       </button>
       {showLatestMessages && (

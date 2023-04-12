@@ -5,7 +5,7 @@ function Header() {
         src="https://cdn-icons-png.flaticon.com/512/1653/1653630.png"
         alt="speech bubbles"
       />
-      <h1>Peer ChatRoom</h1>
+      <h1>HUB CHAT</h1>
     </header>
   );
 }
