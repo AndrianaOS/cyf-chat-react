@@ -225,6 +225,9 @@ footer {
 @media screen and (min-width: 1150px) {
   .name-container {
     grid-template-columns: 10em 22em 10em 22em;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
 
   .name-container input,
