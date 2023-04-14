@@ -55,6 +55,7 @@ function App() {
         }
         console.log("Message Deleted " + id);
         refreshingList(true);
+        alert("Message deleted");
       })
       .catch((error) => console.log(error));
   }
