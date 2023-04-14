@@ -25,6 +25,7 @@ function FormInput(props) {
         console.log("Success:", data);
         props.fetchAllMessages();
         props.refreshingList(true);
+        alert("Message submitted successfully");
       })
       .catch((error) => {
         console.error("Error:", error);
