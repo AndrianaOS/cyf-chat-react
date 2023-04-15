@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 function FormInput(props) {
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: "",
     message: "",
     time: "",
-  });
+  };
+  const [formData, setFormData] = useState(initialState);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,7 +26,8 @@ function FormInput(props) {
         console.log("Success:", data);
         props.fetchAllMessages();
         props.refreshingList(true);
-        alert("Message submitted successfully");
+        // alert("Message submitted successfully");
+        setFormData(initialState);
       })
       .catch((error) => {
         console.error("Error:", error);

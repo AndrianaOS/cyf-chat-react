@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer>
       <p>Created by Andriana</p>
-      <a href="www.github.com">Link to GitHub</a>
+      <a href="https://github.com/AndrianaOS/cyf-chat-react">Link to GitHub</a>
     </footer>
   );
 }
