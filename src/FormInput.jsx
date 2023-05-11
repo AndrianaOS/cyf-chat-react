@@ -26,7 +26,6 @@ function FormInput(props) {
         console.log("Success:", data);
         props.fetchAllMessages();
         props.refreshingList(true);
-        // alert("Message submitted successfully");
         setFormData(initialState);
       })
       .catch((error) => {
@@ -42,7 +41,7 @@ function FormInput(props) {
   return (
     <form action="/messages" method="post" onSubmit={handleSubmit}>
       <div className="name-container">
-        <label htmlFor="name floatingInput">Please enter your name</label>
+        <label htmlFor="name ">Please enter your name</label>
         <input
           type="text"
           name="name"
@@ -59,16 +58,6 @@ function FormInput(props) {
           onChange={handleInputChange}
         />
       </div>
-      {/* <div className="message-container">
-        <label htmlFor="message">Please enter your message</label>
-        <input
-          type="text"
-          name="message"
-          placeholder="Type message"
-          value={formData.message}
-          onChange={handleInputChange}
-        />
-      </div> */}
 
       <button type="submit" className="submit-btn">
         Submit

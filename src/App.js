@@ -60,6 +60,31 @@ function App() {
       .catch((error) => console.log(error));
   }
 
+  // const updateMessage = (id, formData, setFormData, initialState) => {
+  //   // event.preventDefault();
+  //   fetch(`https://chat-server-u011.onrender.com/messages/${id}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       from: formData.name,
+  //       text: formData.message,
+  //       timeSent: formData.time,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //       fetchAllMessages();
+  //       refreshingList(true);
+  //       setFormData(initialState);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
+
   useEffect(() => {
     fetchAllMessages();
     if (refresh) {
@@ -83,6 +108,7 @@ function App() {
           messages={messages}
           refreshingList={refreshingList}
           deleteMessage={deleteMessage}
+          // updateMessage={updateMessage}
         />
       )}
       <button onClick={() => setShowLatestMessages(true)} className="show-btn">

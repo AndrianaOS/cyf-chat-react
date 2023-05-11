@@ -4,9 +4,9 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faPenNib } from "@fortawesome/free-solid-svg-icons";
 
 function ShowAllMessages(props) {
-  function handleUpdate() {
-    alert("FEATURE COMING SOON WITH NEXT UPDATE");
-  }
+  // function handleUpdate() {
+  //   alert("FEATURE COMING SOON WITH NEXT UPDATE");
+  // }
   return (
     <div>
       <aside className="allMessages">
@@ -24,7 +24,7 @@ function ShowAllMessages(props) {
                     icon={faPenNib}
                     style={{ color: "#6ae561" }}
                     className="pen"
-                    onClick={handleUpdate}
+                    // onClick={props.updateMessage(eachMessage.id)}
                   />
                   <FontAwesomeIcon
                     icon={faTrash}
